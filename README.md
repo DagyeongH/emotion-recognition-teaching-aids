@@ -1,2 +1,2 @@
-# mini_project
+## mini_project
 playdata mini project
