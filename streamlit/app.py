@@ -17,14 +17,16 @@ from urllib.request import Request, urlopen
 # st.set_page_config(layout="wide")
 st.set_page_config(layout="centered")  # - 이 코드는 전체적으로 가운데 정렬을 해주는 코드.
 
-
 # 프로그램 제목
-st.title("감정 인식 교구")
+st.title("🌻 🌼 💐 감정 인식 교구 🌹 🪻 🌸")
 st.write("이 프로그램은 자폐아동을 대상으로 감정 인식을 도와주기 위한 교구입니다.")
 
 # 새로운 사이드바 (최종)
 # Sidebar에 표시할 카테고리 목록
-categories = ["훈련", "시험", "Self"]
+with open('style.css') as f:
+    st.markdown(f'<style>{f.read()}', unsafe_allow_html=True) 
+
+categories = ["T r a i n", "T e s t", "T r y"]
 # Sidebar에 카테고리 선택을 위한 라디오 버튼 추가
 selected_category = st.sidebar.radio("하고싶은 거 고르기", categories)
 
@@ -215,6 +217,7 @@ def show_exam_page():
             if 'Happy'==emotion:
                 s1 = '정답입니다 !'
                 s2 = f'당신이 선택한 감정은 Happy이고, 모델이 예측한 감정은 {emotion}입니다.'
+                st.ballons()
             else:
                 s1 = '오답입니다 !'
                 s2 = f'당신이 선택한 감정은 Happy이고, 모델이 예측한 감정은 {emotion}입니다.'
@@ -224,6 +227,7 @@ def show_exam_page():
             if 'Sad'==emotion:
                 s1 = '정답입니다 !'
                 s2 = f'당신이 선택한 감정은 Sad이고, 모델이 예측한 감정은 {emotion}입니다.'
+                st.balloons()
             else:
                 s1 = '오답입니다 !'
                 s2 = f'당신이 선택한 감정은 Sad이고, 모델이 예측한 감정은 {emotion}입니다.'
@@ -233,6 +237,7 @@ def show_exam_page():
             if 'Neutral'==emotion:
                 s1 = '정답입니다 !'
                 s2 = f'당신이 선택한 감정은 Neutral이고, 모델이 예측한 감정은 {emotion}입니다.'
+                st.balloons()
             else:
                 s1 = '오답입니다 !'
                 s2 = f'당신이 선택한 감정은 Neutral이고, 모델이 예측한 감정은 {emotion}입니다.'
@@ -242,6 +247,7 @@ def show_exam_page():
             if 'Surprise'==emotion:
                 s1 = '정답입니다 !'
                 s2 = f'당신이 선택한 감정은 Surprise이고, 모델이 예측한 감정은 {emotion}입니다.'
+                st.balloons()
             else:
                 s1 = '오답입니다 !'
                 s2 = f'당신이 선택한 감정은 Surprise이고, 모델이 예측한 감정은 {emotion}입니다.'
@@ -251,6 +257,7 @@ def show_exam_page():
             if 'Anger'==emotion:
                 s1 = '정답입니다 !'
                 s2 = f'당신이 선택한 감정은 Anger이고, 모델이 예측한 감정은 {emotion}입니다.'
+                st.balloons()
             else:
                 s1 = '오답입니다 !'
                 s2 = f'당신이 선택한 감정은 Anger이고, 모델이 예측한 감정은 {emotion}입니다.'
@@ -260,6 +267,7 @@ def show_exam_page():
             if 'Fear'==emotion:
                 s1 = '정답입니다 !'
                 s2 = f'당신이 선택한 감정은 Fear이고, 모델이 예측한 감정은 {emotion}입니다.'
+                st.balloons()
             else:
                 s1 = '오답입니다 !'
                 s2 = f'당신이 선택한 감정은 Fear이고, 모델이 예측한 감정은 {emotion}입니다.'
@@ -269,6 +277,7 @@ def show_exam_page():
             if 'Disgust'==emotion:
                 s1 = '정답입니다 !'
                 s2 = f'당신이 선택한 감정은 Disgust이고, 모델이 예측한 감정은 {emotion}입니다.'
+                st.balloons()
             else:
                 s1 = '오답입니다 !'
                 s2 = f'당신이 선택한 감정은 Disgust이고, 모델이 예측한 감정은 {emotion}입니다.'
@@ -318,11 +327,11 @@ def show_self_page():
 # Streamlit 앱 실행
 if __name__ == "__main__":
     # 선택된 카테고리에 따라 페이지 표시
-    if selected_category == "훈련":
+    if selected_category == "T r a i n":
         show_training_page()
-    elif selected_category == "시험":
+    elif selected_category == "T e s t":
         show_exam_page()
-    elif selected_category == "Self":
+    elif selected_category == "T r y":
         show_self_page()
 
 
