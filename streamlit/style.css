@@ -4,7 +4,7 @@
 /* CSS에서 해당 폰트를 사용 */
 body {
     font-family: 'Nanum Pen Script', cursive;
-}
+} 
 
 div.row-widget.stRadio > div {
     flex-direction: column;
