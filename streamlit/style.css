@@ -1,10 +1,11 @@
 /* Google Fonts에서 제공하는 폰트 링크를 head 태그에 추가 */
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@import url('https://webfontworld.github.io/PyeongChang/PyeongChangPeace.css');
 
 /* CSS에서 해당 폰트를 사용 */
-body {
+/* body {
     font-family: 'Nanum Pen Script', cursive;
-} 
+}  */
 
 div.row-widget.stRadio > div {
     flex-direction: column;
@@ -30,7 +31,7 @@ div[class*="stRadio"] > div[role="radiogroup"] > label[data-baseweb="radio"] > d
 
     /* float: right; */
     transform: translate(95px);
-
+    font-family: 'Nanum Pen Script', cursive;
 
     /* text-align: center;  */
 }
@@ -51,3 +52,22 @@ div[class*="stRadio"] > div[role="radiogroup"] > label[data-baseweb="radio"] > d
     position: relative;
 }
 
+h1 {
+    font-family: 'PyeongChangPeace';
+  }
+
+h2 {
+    font-family: 'PyeongChangPeace';
+}
+
+h3 {
+    font-family: 'PyeongChangPeace';
+}
+
+p {
+    font-family: 'Nanum Pen Script', cursive;
+}
+
+span {
+    font-family: 'Nanum Pen Script', cursive;
+}
