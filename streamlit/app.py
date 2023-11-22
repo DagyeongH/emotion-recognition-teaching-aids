@@ -248,7 +248,7 @@ if __name__ == "__main__":
         show_training_page()
     elif selected_category == "T e s t  💯":
         show_exam_page()
-    elif selected_category == "T r y  🪞":
+    elif selected_category == "T r y  📷":
         show_self_page()
 
 
