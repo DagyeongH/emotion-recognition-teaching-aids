@@ -27,7 +27,7 @@ st.divider()
 with open('./streamlit/style.css') as f:
     st.markdown(f'<style>{f.read()}', unsafe_allow_html=True) 
 
-categories = ["T r a i n  ⛳️", "T e s t  💯", "T r y  🪞"]
+categories = ["T r a i n  ⛳️", "T e s t  💯", "T r y  📷"]
 # Sidebar에 카테고리 선택을 위한 라디오 버튼 추가
 selected_category = st.sidebar.radio("감정 인식 교구", categories)
 
