@@ -17,7 +17,7 @@ model = load_model('./model/model.h5')
 def detect_face(frame):
 
     # cascade pre-trained 모델 불러오기
-    face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
+    face_cascade = cv2.CascadeClassifier('./model/haarcascade_frontalface_default.xml')
 
     # RGB를 gray scale로 바꾸기
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)

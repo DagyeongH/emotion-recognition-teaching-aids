@@ -23,7 +23,7 @@ st.write("이 프로그램은 자폐아동을 대상으로 감정 인식을 도�
 
 # 새로운 사이드바 (최종)
 # Sidebar에 표시할 카테고리 목록
-with open('style.css') as f:
+with open('./streamlit/style.css') as f:
     st.markdown(f'<style>{f.read()}', unsafe_allow_html=True) 
 
 categories = ["T r a i n", "T e s t", "T r y"]
@@ -217,7 +217,7 @@ def show_exam_page():
             if 'Happy'==emotion:
                 s1 = '정답입니다 !'
                 s2 = f'당신이 선택한 감정은 Happy이고, 모델이 예측한 감정은 {emotion}입니다.'
-                st.ballons()
+                st.balloons()
             else:
                 s1 = '오답입니다 !'
                 s2 = f'당신이 선택한 감정은 Happy이고, 모델이 예측한 감정은 {emotion}입니다.'
