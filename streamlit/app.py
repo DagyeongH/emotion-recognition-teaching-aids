@@ -19,48 +19,65 @@ from img_file import images_and_captions
 st.set_page_config(layout="centered")  # - 이 코드는 전체적으로 가운데 정렬을 해주는 코드.
 
 # 프로그램 제목
-st.title("🌻 🌼 💐 감정 인식 교구 🌹 🪻 🌸")
+st.title("🌻 🌼 💐 감정 인식 교구 🌹 🌺 🌸")
 st.write("이 프로그램은 자폐아동을 대상으로 감정 인식을 도와주기 위한 교구입니다.")
-
+st.divider()
 # 새로운 사이드바 (최종)
 # Sidebar에 표시할 카테고리 목록
 with open('./streamlit/style.css') as f:
     st.markdown(f'<style>{f.read()}', unsafe_allow_html=True) 
 
-categories = ["T r a i n", "T e s t", "T r y"]
+categories = ["T r a i n  ⛳️", "T e s t  💯", "T r y  🪞"]
 # Sidebar에 카테고리 선택을 위한 라디오 버튼 추가
-selected_category = st.sidebar.radio("하고싶은 거 고르기", categories)
+selected_category = st.sidebar.radio("감정 인식 교구", categories)
+
 
 ############################################################################################################################################################################
 
 # 훈련 페이지를 표시하는 함수
 def show_training_page():
-    st.subheader("훈련-사진을 보고, 어떤 감정인지를 알 수 있습니다.")
-    st.divider() # 구분선 코드
+    st.subheader("사진을 보고, 어떤 감정인지를 알 수 있습니다.")
+    
 
     # 현재 이미지 및 캡션의 index
-    current_index = st.session_state.get('current_index', 0)
+    current_index = st.session_state.get('current_index', 7)
 
     # 이미지와 버튼을 배치하는 열 생성하기
-    col1, col2 = st.columns([9, 1])
+    col1, col2, col3 = st.columns([1, 15, 1])
 
-    with col2:
-        st.write('    ')
-        st.write('    ')
-        st.write('    ')
-        st.write('    ')
-        st.write('    ')
+    with col1:
+        # st.write('    ')
+        # st.write('    ')
+        # st.write('    ')
+        # st.write('    ')
+        # st.write('    ')
         # "이전" 버튼 표시
-        if st.button("이전", key="page1_left_button"):
+        if st.button("⬅️", key="page1_left_button"):
             current_index = (current_index - 1) % len(images_and_captions)
-        st.write('    ')
+        # st.write('    ')
+        # # "다음" 버튼 표시
+        # if st.button("다음", key="page1_right_button"):
+        #     current_index = (current_index + 1) % len(images_and_captions)
+        # 현재 인덱스를 세션 상태에 저장하기
+        st.session_state.current_index = current_index
+
+    with col3:
+        # st.write('    ')
+        # st.write('    ')
+        # st.write('    ')
+        # st.write('    ')
+        # st.write('    ')
+        # "이전" 버튼 표시
+        # if st.button("이전", key="page1_left_button"):
+        #     current_index = (current_index - 1) % len(images_and_captions)
+        # st.write('    ')
         # "다음" 버튼 표시
-        if st.button("다음", key="page1_right_button"):
+        if st.button("➡️", key="page1_right_button"):
             current_index = (current_index + 1) % len(images_and_captions)
         # 현재 인덱스를 세션 상태에 저장하기
         st.session_state.current_index = current_index
 
-    with col1:
+    with col2:
         req = Request(images_and_captions[current_index]['image_url'], headers={'User-Agent': 'Mozilla/5.0'})
         pil_image = Image.open(urlopen(req))
 
@@ -74,6 +91,7 @@ def show_training_page():
         emotion = pred_expression(cv_image)
 
         pil_image_resize = pil_image.resize((600, 500))
+
         st.image(pil_image_resize, use_column_width=True)
         st.header(f'감정: {emotion}')
 
@@ -89,8 +107,7 @@ def generate_question_page(question_number):
 
 def show_exam_page():
     
-    st.subheader("시험-사진을 보고, 어떤 감정인지를 맞출 수 있습니다.")
-    st.divider() # 구분선 코드
+    st.subheader("사진을 보고, 어떤 감정인지를 맞출 수 있습니다.")
 
     # 현재 이미지 및 캡션의 index
     page2_current_index = st.session_state.get('current_index', 0)
@@ -102,7 +119,7 @@ def show_exam_page():
 
     with p2_col2:
         
-        if st.button("다음", key="page2_right_button"):
+        if st.button("➡️", key="page2_right_button"):
             page2_current_index = np.random.randint(len(images_and_captions)) % (len(images_and_captions)-1)
             st.session_state.current_index = page2_current_index
 
@@ -125,88 +142,73 @@ def show_exam_page():
     
     # 가로 줄 세우기
     s1 = ''
-    s2 = ''
-    p2_btn_col1, p2_btn_col2, p2_btn_col3, p2_btn_col4, p2_btn_col5, p2_btn_col6, p2_btn_col7 = st.columns([1,1,1,1,1,1,1])
+    a, p2_btn_col1, b, p2_btn_col2, c, p2_btn_col3, d = st.columns([1.5, 3, 1.5, 3, 1.5, 3, 1.5])
     with p2_btn_col1:
         if st.button('Happy'):
             if 'Happy'==emotion:
-                s1 = '정답입니다 !'
-                s2 = f'당신이 선택한 감정은 Happy이고, 모델이 예측한 감정은 {emotion}입니다.'
+                s1 = '🎉 🎉 🎉 정답입니다 🎉 🎉 🎉'
                 st.balloons()
             else:
-                s1 = '오답입니다 !'
-                s2 = f'당신이 선택한 감정은 Happy이고, 모델이 예측한 감정은 {emotion}입니다.'
+                s1 = '오답입니다 ! 다시 도전하세요 ~'
 
     with p2_btn_col2:
         if st.button('Sad'):
             if 'Sad'==emotion:
-                s1 = '정답입니다 !'
-                s2 = f'당신이 선택한 감정은 Sad이고, 모델이 예측한 감정은 {emotion}입니다.'
+                s1 = '🎉 🎉 🎉 정답입니다 🎉 🎉 🎉'
                 st.balloons()
             else:
-                s1 = '오답입니다 !'
-                s2 = f'당신이 선택한 감정은 Sad이고, 모델이 예측한 감정은 {emotion}입니다.'
+                s1 = '오답입니다 ! 다시 도전하세요 ~'
 
     with p2_btn_col3:
         if st.button('Neutral'):
             if 'Neutral'==emotion:
-                s1 = '정답입니다 !'
-                s2 = f'당신이 선택한 감정은 Neutral이고, 모델이 예측한 감정은 {emotion}입니다.'
+                s1 = '🎉 🎉 🎉 정답입니다 🎉 🎉 🎉'
                 st.balloons()
             else:
-                s1 = '오답입니다 !'
-                s2 = f'당신이 선택한 감정은 Neutral이고, 모델이 예측한 감정은 {emotion}입니다.'
+                s1 = '오답입니다 ! 다시 도전하세요 ~'
 
+    p2_btn_col4, f, p2_btn_col5, g,  p2_btn_col6, i,  p2_btn_col7 = st.columns([3, 1, 3, 1, 3, 1, 3])
     with p2_btn_col4:
         if st.button('Surprise'):
             if 'Surprise'==emotion:
-                s1 = '정답입니다 !'
-                s2 = f'당신이 선택한 감정은 Surprise이고, 모델이 예측한 감정은 {emotion}입니다.'
+                s1 = '🎉 🎉 🎉 정답입니다 🎉 🎉 🎉'
                 st.balloons()
             else:
-                s1 = '오답입니다 !'
-                s2 = f'당신이 선택한 감정은 Surprise이고, 모델이 예측한 감정은 {emotion}입니다.'
+                s1 = '오답입니다 ! 다시 도전하세요 ~'
 
     with p2_btn_col5:
-        if st.button('Anger'): 
+        if st.button('Angry'): 
             if 'Anger'==emotion:
-                s1 = '정답입니다 !'
-                s2 = f'당신이 선택한 감정은 Anger이고, 모델이 예측한 감정은 {emotion}입니다.'
+                s1 = '🎉 🎉 🎉 정답입니다 🎉 🎉 🎉'
                 st.balloons()
             else:
-                s1 = '오답입니다 !'
-                s2 = f'당신이 선택한 감정은 Anger이고, 모델이 예측한 감정은 {emotion}입니다.'
+                s1 = '오답입니다 ! 다시 도전하세요 ~'
 
     with p2_btn_col6:
         if st.button('Fear'): 
             if 'Fear'==emotion:
-                s1 = '정답입니다 !'
-                s2 = f'당신이 선택한 감정은 Fear이고, 모델이 예측한 감정은 {emotion}입니다.'
+                s1 = '🎉 🎉 🎉 정답입니다 🎉 🎉 🎉'
                 st.balloons()
             else:
-                s1 = '오답입니다 !'
-                s2 = f'당신이 선택한 감정은 Fear이고, 모델이 예측한 감정은 {emotion}입니다.'
+                s1 = '오답입니다 ! 다시 도전하세요 ~'
 
     with p2_btn_col7:
         if st.button('Disgust'): 
             if 'Disgust'==emotion:
-                s1 = '정답입니다 !'
-                s2 = f'당신이 선택한 감정은 Disgust이고, 모델이 예측한 감정은 {emotion}입니다.'
+                s1 = '🎉 🎉 🎉 정답입니다 🎉 🎉 🎉'
                 st.balloons()
             else:
-                s1 = '오답입니다 !'
-                s2 = f'당신이 선택한 감정은 Disgust이고, 모델이 예측한 감정은 {emotion}입니다.'
+                s1 = '오답입니다 ! 다시 도전하세요 ~'
 
     if s1 != '':
-        st.write(s1)
-        st.write(s2)
+        st.subheader(s1)
+        # st.subheader(s2)
 
 ############################################################################################################################################################################
 
 # Self 페이지를 표시하는 함수
 def show_self_page():
-    st.subheader("Self- Webcam을 연결하거나 사진을 업로드하여 감정을 확인 할 수 있습니다.")
-    st.divider() 
+    st.subheader("Webcam과 사진을 활용하여 감정을 확인할 수 있습니다.")
 
     # webcam 과 upload tab 나누기
     tab1, tab2 = st.tabs(['Webcam', 'Upload'])
@@ -242,11 +244,11 @@ def show_self_page():
 # Streamlit 앱 실행
 if __name__ == "__main__":
     # 선택된 카테고리에 따라 페이지 표시
-    if selected_category == "T r a i n":
+    if selected_category == "T r a i n  ⛳️":
         show_training_page()
-    elif selected_category == "T e s t":
+    elif selected_category == "T e s t  💯":
         show_exam_page()
-    elif selected_category == "T r y":
+    elif selected_category == "T r y  🪞":
         show_self_page()
 
 
