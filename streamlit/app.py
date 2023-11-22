@@ -72,11 +72,10 @@ def show_training_page():
 
         # 결과 예측
         emotion = pred_expression(cv_image)
+
+        pil_image_resize = pil_image.resize((600, 500))
+        st.image(pil_image_resize, use_column_width=True)
         st.header(f'감정: {emotion}')
-        st.image(image_np, use_column_width=True)
-        #####################################################################################
-        # st.header(images_and_captions[current_index]['caption'])
-        # st.image(images_and_captions[current_index]['image_url'], use_column_width=True)
 
 ############################################################################################################################################################################
 
@@ -121,7 +120,8 @@ def show_exam_page():
         # 결과 예측
         emotion = pred_expression(cv_image)
 
-        st.image(image_np, use_column_width=True)
+        pil_image_resize = pil_image.resize((600, 500))
+        st.image(pil_image_resize, use_column_width=True)
     
     # 가로 줄 세우기
     s1 = ''
