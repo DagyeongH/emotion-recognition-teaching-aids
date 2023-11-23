@@ -6,7 +6,7 @@ images_and_captions = [
     {'image_url': 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWxpM6zHKYMwxRz3CBCpQrnxxE1oSKxXrt6B2_2XuczjEzw7_6by_KHBt2aXYrNz1Qf_o&usqp=CAU'},
     {'image_url': 'https://i.namu.wiki/i/ayOL5R-h6auuzBOK3vkg9rh8lcvsE4PaZ4eYEormtcVY9Qe8nbyMLrEtl9rSr9NcVx0L9zMkmqPWZW4q-9sARw.webp'},
     {'image_url': 'https://image.kmib.co.kr/online_image/2018/1001/611818110012726161_1.jpg'},
-    {'image_url': 'https://img.sbs.co.kr/newsnet/etv/upload/2018/06/25/30000605569_1280.jpg'},
+    {'image_url': 'https://img.hankyung.com/photo/201602/03.11286078.1.jpg'},
     {'image_url': 'https://news.nateimg.co.kr/orgImg/xs/2023/08/07/1691395552320290.jpg'},
     {'image_url': 'https://www.bntnews.co.kr/data/bnt/image/201603/46a5a852eacc68f10f946a52808d7aeb.jpg'},
     {'image_url': 'https://images.khan.co.kr/article/2017/10/11/2017101002000234100047981.jpg'},

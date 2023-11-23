@@ -102,27 +102,43 @@ def webcam_expression(frame):
         x, y, w, h = coord[face_index]
         
         # 머리 둘레에 직사각형 그리기: (0, 255, 0)을 통해 녹색으로 선두께는 2
-        cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
+        cv2.rectangle(image, (x, y), (x+w, y+h), (255, 0, 0), 2)
         
         # 감정 예측
         pred = model.predict(face_zoom)
         pred_result = np.argmax(pred)
+
+        # # 각 라벨별 예측 정도 표시
+        cv2.putText(image,                                   # 텍스트를 표시할 프레임
+                    "Angry: " + str(round(pred[0][0], 3)),   # 텍스트 표시 "감정: 예측 probablity", 소수점 아래 3자리
+                    (10, 50),                                # 텍스트 위치
+                    cv2.FONT_HERSHEY_SIMPLEX,                # 폰트 종류
+                    0.5,                                       # 폰트 사이즈
+                    (255, 0, 0),                             # 폰트 색상
+                    1                                        # 폰트 두께
+                   )
+        cv2.putText(image, "Disgust: " + str(round(pred[0][1], 2)), (10, 90), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1)
+        cv2.putText(image, "Fear: " + str(round(pred[0][2], 2)), (10, 130), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1)
+        cv2.putText(image, "Happy: " + str(round(pred[0][3], 2)), (10, 170), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1)
+        cv2.putText(image, "Sad: " + str(round(pred[0][4], 2)), (10, 210), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1)
+        cv2.putText(image, "Surprise: " + str(round(pred[0][5], 2)), (10, 250), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1)
+        cv2.putText(image, "Neutral: " + str(round(pred[0][6], 2)), (10, 290), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 0, 0), 1)
         
         # 예측값이 높은 라벨 하나만 프레임 옆에 표시
         if pred_result == 0:
-            cv2.putText(image, "Angry ", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 255, 255), 4)
+            cv2.putText(image, "Angry ", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 0, 0), 4)
         elif pred_result == 1:
-            cv2.putText(image, "Disgust ", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 255, 255), 4)
+            cv2.putText(image, "Disgust ", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 0, 0), 4)
         elif pred_result == 2:
-            cv2.putText(image, "Fear ", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 255, 255), 4)
+            cv2.putText(image, "Fear ", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 0, 0), 4)
         elif pred_result == 3:
-            cv2.putText(image, "Happy ", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 255, 255), 4)
+            cv2.putText(image, "Happy ", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 0, 0), 4)
         elif pred_result == 4:
-            cv2.putText(image, "Sad ", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 255, 255), 4)
+            cv2.putText(image, "Sad ", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 0, 0), 4)
         elif pred_result == 5:
-            cv2.putText(image, "Surprise ", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 255, 255), 4)
+            cv2.putText(image, "Surprise ", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 0, 0), 4)
         else:
-            cv2.putText(image, "Neutral ", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 255, 255), 4)
+            cv2.putText(image, "Neutral ", (x, y), cv2.FONT_HERSHEY_SIMPLEX, 2, (255, 0, 0), 4)
 
         return av.VideoFrame.from_ndarray(image, format="bgr24")
     except:
