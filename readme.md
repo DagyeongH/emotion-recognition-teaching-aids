@@ -23,7 +23,8 @@
 ### Streamlit 
 - 목적 : Face classification Model과 Face detection webcam 모델을 이용하여, 실제로 자폐아동들이 학습할 수 있는 페이지를 구현하였습니다.
 - 실행 파일 : app.py
+- Dataset : image_file.py 
 - 꾸미기 파일 : style.css
 
 ### Streamlit Demo
-(실제 구현 영상 올리기)
+(실제 구현 gif 올리기)
