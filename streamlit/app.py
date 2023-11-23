@@ -27,7 +27,7 @@ st.divider()
 with open('./streamlit/style.css') as f:
     st.markdown(f'<style>{f.read()}', unsafe_allow_html=True) 
 
-categories = ["T r a i n  ⛳️", "T e s t  💯", "T r y  📷"]
+categories = ["T r a i n  🙇🏻‍♀️", "T e s t  ✍🏻", "T r y  📷"]
 # Sidebar에 카테고리 선택을 위한 라디오 버튼 추가
 selected_category = st.sidebar.radio("감정 인식 교구", categories)
 
@@ -46,31 +46,12 @@ def show_training_page():
     col1, col2, col3 = st.columns([1, 15, 1])
 
     with col1:
-        # st.write('    ')
-        # st.write('    ')
-        # st.write('    ')
-        # st.write('    ')
-        # st.write('    ')
         # "이전" 버튼 표시
         if st.button("⬅️", key="page1_left_button"):
             current_index = (current_index - 1) % len(images_and_captions)
-        # st.write('    ')
-        # # "다음" 버튼 표시
-        # if st.button("다음", key="page1_right_button"):
-        #     current_index = (current_index + 1) % len(images_and_captions)
-        # 현재 인덱스를 세션 상태에 저장하기
         st.session_state.current_index = current_index
 
     with col3:
-        # st.write('    ')
-        # st.write('    ')
-        # st.write('    ')
-        # st.write('    ')
-        # st.write('    ')
-        # "이전" 버튼 표시
-        # if st.button("이전", key="page1_left_button"):
-        #     current_index = (current_index - 1) % len(images_and_captions)
-        # st.write('    ')
         # "다음" 버튼 표시
         if st.button("➡️", key="page1_right_button"):
             current_index = (current_index + 1) % len(images_and_captions)
@@ -114,8 +95,6 @@ def show_exam_page():
 
     # 이미지와 버튼을 배치하는 열 생성하기
     p2_col1, p2_col2 = st.columns([9, 1])
-
-
 
     with p2_col2:
         
@@ -202,7 +181,6 @@ def show_exam_page():
 
     if s1 != '':
         st.subheader(s1)
-        # st.subheader(s2)
 
 ############################################################################################################################################################################
 
@@ -236,7 +214,7 @@ def show_self_page():
 
             # 결과 예측 후 출력
             emotion = pred_expression(cv_image)
-            st.title(f'{emotion}')
+            st.subheader(f'{emotion}')
             
             st.image(image_np, use_column_width=True)
 
@@ -244,19 +222,12 @@ def show_self_page():
 # Streamlit 앱 실행
 if __name__ == "__main__":
     # 선택된 카테고리에 따라 페이지 표시
-    if selected_category == "T r a i n  ⛳️":
+    if selected_category == "T r a i n  🙇🏻‍♀️":
         show_training_page()
-    elif selected_category == "T e s t  💯":
+    elif selected_category == "T e s t  ✍🏻":
         show_exam_page()
     elif selected_category == "T r y  📷":
         show_self_page()
 
 
 ############################################################################################################################################################################
-
-
-# def get_data():
-#     print("get_data")
-#     df = pd.DataFrame({"A": np.arange(0, 10, 1), "B": np.arange(0, 1, 0.1)})
-#     return df
-
