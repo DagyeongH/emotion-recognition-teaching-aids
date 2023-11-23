@@ -15,6 +15,7 @@
 <img src="/Users/ellen/Downloads/mini_project/mini_project/figures" alt="훈련데이터">
 <img src="/Users/ellen/Downloads/mini_project/mini_project/figures" alt="테스트데이터">
 
+
 ### Face Detection Webcam📷
 - 사용 모델 : keras CNN model & openCV
 - 모델 파일 : face_classification_webcam.ipynb
