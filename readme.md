@@ -3,7 +3,7 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=Avengers%20with%20Citizen&fontSize=50" />
 <div align="left">
 
-### Face Classification Model📷
+### Face Classification Model😀
 - 목적 : Face Classification Model을 통해서, 자폐아동을 대상으로 표정 인식을 도와주는 프로그램입니다.
 - Dataset : image_to_csv.ipynb
   - 데이터셋은 이미지의 pixel단위를 csv로 저장하여, train과 test로 나누었습니다.
@@ -13,7 +13,7 @@
 ### Emotion Detection Examples
 (예시 사진 넣어두기)
 
-### Face Detection Webcam
+### Face Detection Webcam📷
 - 사용 모델 : keras CNN model & openCV
 - 모델 파일 : face_classification_webcam.ipynb
 
