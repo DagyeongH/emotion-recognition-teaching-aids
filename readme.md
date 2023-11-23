@@ -29,8 +29,8 @@
 ![dropout_vs](/figures/dropout.PNG)
 ![max_pooling2d_vs](/figures/max_pooling2d.PNG)
 - Train data result
-![훈련데이터](/figures/aa.png)
-![testdata](/figures/bb.png)
+![훈련데이터](/figures/aa.PNG)
+![testdata](/figures/bb.PNG)
 - 학습결과
 ![train_result](/figures/100Epoch.PNG)
 ![accuracy_curve](/figures/a_curve.PNG)
