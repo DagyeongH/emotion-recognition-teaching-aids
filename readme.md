@@ -10,7 +10,6 @@
 - 사용 모델 : Face detection , keras CNN model & OpenCV
   - CNN : 이미지나 영상 데이터를 처리할 때 사용함. Convolution이라는 전처리 작업이 들어가는 Neural Network 모델
 - 모델 파일 : face_classification_model.ipynb
-- 학습 과정
 
 ### Emotion Detection Model Visualization
 
