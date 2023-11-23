@@ -12,7 +12,7 @@
 - 모델 파일 : face_classification_model.ipynb
 
 ### Emotion Detection Model Visualization
-<img src="/Users/ellen/Downloads/mini_project/mini_project/figures" alt="훈련데이터">
+<img src="/Users/ellen/Downloads/mini_project/mini_project/figures" alt="훈련데이터"> 
 <img src="/Users/ellen/Downloads/mini_project/mini_project/figures" alt="테스트데이터">
 
 
