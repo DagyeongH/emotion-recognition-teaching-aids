@@ -8,10 +8,12 @@
 - Dataset : image_to_csv.ipynb / 최종 이미지파일은 Google Drive 주소 참고
   - 데이터셋은 이미지의 pixel단위를 csv로 저장하여, train과 test로 나누었습니다.
 - 사용 모델 : Face detection , keras CNN model & OpenCV
+  - CNN : 이미지나 영상 데이터를 처리할 때 사용함. Convolution이라는 전처리 작업이 들어가는 Neural Network 모델
 - 모델 파일 : face_classification_model.ipynb
+- 학습 과정
 
-### Emotion Detection Examples
-(예시 사진 넣어두기)
+### Emotion Detection Model Visualization
+
 
 ### Face Detection Webcam📷
 - 사용 모델 : keras CNN model & openCV
