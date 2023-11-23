@@ -6,8 +6,8 @@
 ### DataSet 수집
 - 구글 이미지 크롤러, Aihub, Kaggel (기준이 애매한 사진 직접 제거)
 - img -> csv 파일로 변환 (Label, Pixel, train&test 여부) : 저장 및 관리가 용이하기 위함
-<img src="/Users/ellen/Downloads/mini_project/mini_project/figures/img_to_csv_train.png" alt="train data">
-<img src="/Users/ellen/Downloads/mini_project/mini_project/figures/img_to_csv_test.png" alt="test data">
+![train_data](img src="./figures/img_to_csv_train.png")
+![test_data](img src="./figures/img_to_csv_test.png")
 
 ### Face Classification Model😀
 - 목적 : Face Classification Model을 통해서, 자폐아동을 대상으로 표정 인식을 도와주는 프로그램입니다.
@@ -20,20 +20,20 @@
 
 ### Emotion Detection Model Visualization
 - CNN Model 구조 설명
-<img src="/Users/ellen/Downloads/mini_project/mini_project/figures/1.png" alt="conv2d">
-<img src="/Users/ellen/Downloads/mini_project/mini_project/figures/2.png" alt="pooling layer">
-<img src="/Users/ellen/Downloads/mini_project/mini_project/figures/3.png" alt="flatten">
-<img src="/Users/ellen/Downloads/mini_project/mini_project/figures/4.png" alt="fully connected layer">
-<img src="/Users/ellen/Downloads/mini_project/mini_project/figures/conv2d.png" alt="conv2d model">
-<img src="/Users/ellen/Downloads/mini_project/mini_project/figures/dropout.png" alt="dropout vis">
-<img src="/Users/ellen/Downloads/mini_project/mini_project/figures/max_pooling2d.png" alt="max_pooling2d vis">
+![conv2d](img src="./figures/1.png")
+![pooling_layer](img src="./figures/2.png")
+![faltten](img src="./figures/3.png")
+![fully_connected_layer](img src="./figures/4.png")
+![conv2d_model](img src="./figures/conv2d.png")
+![dropout_vs](img src="./figures/dropout.png")
+![max_pooling2d_vs](img src="./figures/max_pooling2d.png")
 - Train data result
-<img src="/Users/ellen/Downloads/mini_project/mini_project/figures/aa.png" alt="훈련데이터">
-<img src="/Users/ellen/Downloads/mini_project/mini_project/figures/bb.png" alt="테스트데이터">
+![훈련데이터](img src="./figures/aa.png")
+![testdata](img src="./figures/bb.png")
 - 학습결과
-<img src="/Users/ellen/Downloads/mini_project/mini_project/figures/100Epoch.png" alt="train result">
-<img src="/Users/ellen/Downloads/mini_project/mini_project/figures/a_curve.png" alt="accuracy curve">
-<img src="/Users/ellen/Downloads/mini_project/mini_project/figures/l_curve.png" alt="loss curve">
+![train_result](img src="./figures/100Epoch.png")
+![accuracy_curve](img src="./figures/a_curve.png")
+![loss_curve](img src="./figures/l_curve.png")
 
 ### Face Detection Webcam📷
 - 사용 모델 : keras CNN model & openCV
