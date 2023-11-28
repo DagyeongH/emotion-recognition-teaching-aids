@@ -40,7 +40,7 @@ def show_training_page():
     
 
     # 현재 이미지 및 캡션의 index
-    current_index = st.session_state.get('current_index', 7)
+    current_index = st.session_state.get('current_index', 6)
 
     # 이미지와 버튼을 배치하는 열 생성하기
     col1, col2, col3 = st.columns([1, 15, 1])
