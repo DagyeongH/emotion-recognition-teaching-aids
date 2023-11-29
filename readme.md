@@ -50,4 +50,8 @@
 - 꾸미기 파일 : style.css
 
 ### Streamlit Demo
-(실제 구현 gif 올리기)
+![train](https://github.com/DagyeongH/mini_project/assets/123550946/84821b78-1937-409c-90a0-6bfdee4b9d7f)
+
+![test](https://github.com/DagyeongH/mini_project/assets/123550946/f9037892-2da8-4d57-a825-a5c2be7fdd94)
+
+![self](https://github.com/DagyeongH/mini_project/assets/123550946/b6299bb6-335d-4490-a5b7-6466cc6bf3d5)
