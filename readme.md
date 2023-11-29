@@ -41,7 +41,7 @@
 - 모델 파일 : face_classification_webcam.ipynb
 
 ### Webcam Examples
-(데모 사진 넣기/ 짧은 영상도 갠찮을듯)
+![KakaoTalk_Photo_2023-11-29-09-22-02](https://github.com/DagyeongH/mini_project/assets/123550946/0bad79ec-8edb-4d5b-895f-8283488241fb)
 
 ### Streamlit 
 - 목적 : Face classification Model과 Face detection webcam 모델을 이용하여, 실제로 자폐아동들이 학습할 수 있는 페이지를 구현하였습니다.
